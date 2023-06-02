@@ -25,7 +25,7 @@ totalPairs = 0
 # Declares background, number of tiles
 # Creates the state of the tile
 # Hide tiles
-pic = 'pic.gif'
+pic = 'Assets/pic.gif'
 tiles = list(range(32)) * 2
 state = {'mark': None}
 hide = [True] * 64
@@ -37,7 +37,7 @@ def finalScene():
     final.setup(WIDTH, HEIGHT)
     final.bgcolor("black")
     final.title("COSMIC EYE") 
-    final.bgpic("endjimmy.gif")
+    final.bgpic("Assets/endjimmy.gif")
     final.update()
     time.sleep(2) # Set the background pic to use as a template 
 
@@ -220,7 +220,7 @@ def scene4_2():
     pantalla2.bgcolor("black")
     pantalla2.title("COSMIC EYE") 
 
-    pantalla2.bgpic("Infrared.gif")
+    pantalla2.bgpic("Assets/Infrared.gif")
     pantalla2.update()
     time.sleep(2) # Set the background pic to use as a template 
 
@@ -323,7 +323,7 @@ def scene4_1():
     pantalla2.bgcolor("black")
     pantalla2.title("COSMIC EYE") 
 
-    pantalla2.bgpic("Awesome2.gif") 
+    pantalla2.bgpic("Assets/Awesome2.gif") 
     pantalla2.update()
     time.sleep(2) # Set the background pic to use as a template 
 
@@ -389,23 +389,23 @@ def screen_turtle_s4():
     screen_S4.setup(WIDTH, HEIGHT)
     screen_S4.bgcolor("black")
     screen_S4.title("JWST Puzzle!")
-    screen_S4.bgpic("fondo_drop2.gif")
+    screen_S4.bgpic("Assets/fondo_drop2.gif")
     return screen_S4
 
 # Save .gif files as possible options for Turtle objects
 def registerShapes_S4():
     # Parts of the JWST
-    pIsim = ["NIRspec.gif", "NIRcam.gif", "NIRISS.gif", "MIRI.gif"]
+    pIsim = ["Assets/NIRspec.gif", "Assets/NIRcam.gif", "Assets/NIRISS.gif", "Assets/MIRI.gif"]
     for part in pIsim:
         turtle.register_shape(part)
 
     # Assembled by parts
-    pArmedIsim = ["fondo_drop2.gif", "f1_ISIM.gif", "f2_ISIM.gif", "f3_ISIM.gif", "f4_ISIM.gif"]
+    pArmedIsim = ["Assets/fondo_drop2.gif", "Assets/f1_ISIM.gif", "Assets/f2_ISIM.gif", "Assets/f3_ISIM.gif", "Assets/f4_ISIM.gif"]
     for pArmed in pArmedIsim:
         turtle.register_shape(pArmed)
 
     # Extra images
-    imgExtras = ["jimmybee_happy.gif", "jimmybee_talk.gif"]
+    imgExtras = ["Assets/jimmybee_happy.gif", "Assets/jimmybee_talk.gif"]
     for imgEx in imgExtras:
         turtle.register_shape(imgEx)
 
@@ -469,7 +469,7 @@ def checkPos_S4(x, y):
         nir_Spec.clear()
         nir_Spec.setpos(300, 300)
         nir_Spec.hideturtle()
-        isim_figure.shape("f1_ISIM.gif")
+        isim_figure.shape("Assets/f1_ISIM.gif")
         part_Info(1) # The app will display que info of this part of the telescope and their characteristics by calling the function part_Info
 
     if(is_nir_Spec and posi(nir_Cam)):
@@ -477,7 +477,7 @@ def checkPos_S4(x, y):
         nir_Cam.clear()
         nir_Cam.setpos(300, 300)
         nir_Cam.hideturtle()
-        isim_figure.shape("f2_ISIM.gif")
+        isim_figure.shape("Assets/f2_ISIM.gif")
         part_Info(2)
 
     if(is_nir_Cam and posi(nir_ISS)):
@@ -485,7 +485,7 @@ def checkPos_S4(x, y):
         nir_ISS.clear()
         nir_ISS.setpos(300, 300)
         nir_ISS.hideturtle()
-        isim_figure.shape("f3_ISIM.gif")
+        isim_figure.shape("Assets/f3_ISIM.gif")
         part_Info(3)
 
     if(is_nir_ISS and posi(miri)):
@@ -493,7 +493,7 @@ def checkPos_S4(x, y):
         miri.clear()
         miri.setpos(300, 300)
         miri.hideturtle()
-        isim_figure.shape("f4_ISIM.gif")
+        isim_figure.shape("Assets/f4_ISIM.gif")
         part_Info(4)
         scene4_1()
         time.sleep(3)
@@ -505,33 +505,33 @@ def checkPos_S4(x, y):
 # Creates the objects 
 def createObjects_S4():
     # Generate and place the isim_figure in its pos
-    isim_figure.shape("fondo_drop2.gif")
+    isim_figure.shape("Assets/fondo_drop2.gif")
     isim_figure.penup()
     isim_figure.setpos(0,0)
 
     # Generate and place the nir_Spec in its pos
-    nir_Spec.shape("NIRspec.gif")
+    nir_Spec.shape("Assets/NIRspec.gif")
     nir_Spec.left(90)
     nir_Spec.penup()
     nir_Spec.setpos(-WIDTH / 2 + 120, 260)
     nir_Spec.speed(0)
 
     # Generate and place the nir_Cam in its pos
-    nir_Cam.shape("NIRcam.gif")
+    nir_Cam.shape("Assets/NIRcam.gif")
     nir_Cam.left(90)
     nir_Cam.penup()
     nir_Cam.setpos(-60, 260)
     nir_Cam.speed(0)
 
     # Generate and place the nir_ISS in its pos
-    nir_ISS.shape("NIRISS.gif")
+    nir_ISS.shape("Assets/NIRISS.gif")
     nir_ISS.left(90)
     nir_ISS.penup()
     nir_ISS.setpos(60, 260)
     nir_ISS.speed(0)
     
     # Generate and place the miri in its pos
-    miri.shape("MIRI.gif")
+    miri.shape("Assets/MIRI.gif")
     miri.left(90)
     miri.penup()
     miri.setpos(180, 260)
@@ -571,7 +571,7 @@ def drawMessage_S4(txt):
     jimmyBee.hideturtle()
     jimmyBee.penup()
     jimmyBee.setpos(-250, -250)
-    jimmyBee.shape("jimmybee_happy.gif")
+    jimmyBee.shape("Assets/jimmybee_happy.gif")
     jimmyBee.showturtle()
 
     # Show the Jimmy Bee text
@@ -587,16 +587,16 @@ def drawMessage_S4(txt):
     # This FOR loop allows us to write letter by letter
     for letter in txt:
         
-        jimmyBee.shape("jimmybee_talk.gif")
+        jimmyBee.shape("Assets/jimmybee_talk.gif")
         if ghost_INFO.xcor() < 290: # As long as the letters do not reach 290 pixels of the window (right limit)
             ghost_INFO.write(letter, align="left", font=("Pixelmix", 8, "bold"))
-            jimmyBee.shape("jimmybee_happy.gif")
+            jimmyBee.shape("Assets/jimmybee_happy.gif")
             ghost_INFO.fd(10)
 
         else: # When it reaches it, start writing on the bottom line
             ghost_INFO.setpos(-210, ghost_INFO.ycor() - 18)
             ghost_INFO.write(letter, align="left", font=("Pixelmix", 8, "bold"))
-            jimmyBee.shape("jimmybee_happy.gif")
+            jimmyBee.shape("Assets/jimmybee_happy.gif")
             ghost_INFO.fd(10)
 
         if letter == '.':
@@ -661,7 +661,7 @@ def scene3_2():
     pantalla2.bgcolor("black")
     pantalla2.title("COSMIC EYE") 
 
-    pantalla2.bgpic("JamesWebb3.gif")
+    pantalla2.bgpic("Assets/JamesWebb3.gif")
     pantalla2.update()
     time.sleep(2) # Set the background pic to use as a template 
 
@@ -773,7 +773,7 @@ def scene3_1():
     pantalla2.bgcolor("black")
     pantalla2.title("COSMIC EYE") 
 
-    pantalla2.bgpic("Congrats2.gif")
+    pantalla2.bgpic("Assets/Congrats2.gif")
     pantalla2.update()
     time.sleep(2) # Set the background pic to use as a template 
 
@@ -866,23 +866,23 @@ def screen_turtle():
     screen.setup(WIDTH, HEIGHT)
     screen.bgcolor("black")
     screen.title("JWST Puzzle!")
-    screen.bgpic("fondoFinal.gif")
+    screen.bgpic("Assets/fondoFinal.gif")
     return screen
 
 # Save .gif files as possible options for Turtle objects
 def registerShapes():
     # Parts of the JWST
-    pTelescope = ["mirror1.gif", "mirror2.gif", "ISIM.gif", "antenna.gif", "momentum_flap.gif", "solar_array.gif", "spacecraft_bus_star.gif", "sunshield.gif"]
+    pTelescope = ["Assets/mirror1.gif", "Assets/mirror2.gif", "Assets/ISIM.gif", "Assets/antenna.gif", "Assets/momentum_flap.gif", "Assets/solar_array.gif", "Assets/spacecraft_bus_star.gif", "Assets/sunshield.gif"]
     for part in pTelescope:
         turtle.register_shape(part)
 
     # Assembled by parts
-    pArmedTelescope = ["f1JW.gif", "f2JW.gif", "f3JW.gif", "f4JW.gif", "f5JW.gif", "f6JW.gif", "f7JW.gif", "f8JW.gif"]
+    pArmedTelescope = ["Assets/f1JW.gif", "Assets/f2JW.gif", "Assets/f3JW.gif", "Assets/f4JW.gif", "Assets/f5JW.gif", "Assets/f6JW.gif", "Assets/f7JW.gif", "Assets/f8JW.gif"]
     for pArmed in pArmedTelescope:
         turtle.register_shape(pArmed)
 
     # Extra images
-    imgExtras = ["jimmybee_happy.gif", "JWST_silueta.gif", "jimmybee_talk.gif"]
+    imgExtras = ["Assets/jimmybee_happy.gif", "Assets/JWST_silueta.gif", "Assets/jimmybee_talk.gif"]
     for imgEx in imgExtras:
         turtle.register_shape(imgEx)
 
@@ -974,7 +974,7 @@ def checkPos(x, y):
         mirror1.clear()
         mirror1.setpos(300, 300)
         mirror1.hideturtle()
-        jwst_figure.shape("f1JW.gif")
+        jwst_figure.shape("Assets/f1JW.gif")
         part_Info(1) # The app will display que info of this part of the telescope and their characteristics by calling the function part_Info
 
     if(isMirror1 and posi(mirror2)):
@@ -982,7 +982,7 @@ def checkPos(x, y):
         mirror2.clear()
         mirror2.setpos(300, 300)
         mirror2.hideturtle()
-        jwst_figure.shape("f2JW.gif")
+        jwst_figure.shape("Assets/f2JW.gif")
         part_Info(2)
 
     if(isMirror2 and posi(isim)):
@@ -990,7 +990,7 @@ def checkPos(x, y):
         isim.clear()
         isim.setpos(300, 300)
         isim.hideturtle()
-        jwst_figure.shape("f3JW.gif")
+        jwst_figure.shape("Assets/f3JW.gif")
         part_Info(3)
 
     if(isIsim and posi(antenna)):
@@ -998,7 +998,7 @@ def checkPos(x, y):
         antenna.clear()
         antenna.setpos(300, 300)
         antenna.hideturtle()
-        jwst_figure.shape("f4JW.gif")
+        jwst_figure.shape("Assets/f4JW.gif")
         part_Info(4)
 
     if(isAntenna and posi(momentum_flap)):
@@ -1006,7 +1006,7 @@ def checkPos(x, y):
         momentum_flap.clear()
         momentum_flap.setpos(300, 300)
         momentum_flap.hideturtle()
-        jwst_figure.shape("f5JW.gif")
+        jwst_figure.shape("Assets/f5JW.gif")
         part_Info(5)
 
     if(isMomentum_flap and posi(solar_array)):
@@ -1014,7 +1014,7 @@ def checkPos(x, y):
         solar_array.clear()
         solar_array.setpos(300, 300)
         solar_array.hideturtle()
-        jwst_figure.shape("f6JW.gif")
+        jwst_figure.shape("Assets/f6JW.gif")
         part_Info(6)
 
     if(isSolar_array and posi(spacecraft_bus_star)):
@@ -1022,7 +1022,7 @@ def checkPos(x, y):
         spacecraft_bus_star.clear()
         spacecraft_bus_star.setpos(300, 300)
         spacecraft_bus_star.hideturtle()
-        jwst_figure.shape("f7JW.gif")
+        jwst_figure.shape("Assets/f7JW.gif")
         part_Info(7)
 
     if(isSpacecraft_bus_star and posi(sunshield)):
@@ -1030,7 +1030,7 @@ def checkPos(x, y):
         sunshield.clear()
         sunshield.setpos(300, 300)
         sunshield.hideturtle()
-        jwst_figure.shape("f8JW.gif")
+        jwst_figure.shape("Assets/f8JW.gif")
         part_Info(8)
         scene3_1()
         time.sleep(3)
@@ -1041,61 +1041,61 @@ def checkPos(x, y):
 # Creates the objects 
 def createObjects():
     # Generate and place the jwst_figure in its pos
-    jwst_figure.shape("JWST_silueta.gif")
+    jwst_figure.shape("Assets/JWST_silueta.gif")
     jwst_figure.penup()
     jwst_figure.setpos(0,0)
 
     # Generate and place the mirror1 in its pos
-    mirror1.shape("mirror1.gif")
+    mirror1.shape("Assets/mirror1.gif")
     mirror1.left(90)
     mirror1.penup()
     mirror1.setpos(-233.34, 260) # -233.34
     mirror1.speed(0)
 
     # Generate and place the mirror2 in its pos
-    mirror2.shape("mirror2.gif")
+    mirror2.shape("Assets/mirror2.gif")
     mirror2.left(90)
     mirror2.penup()
     mirror2.setpos(-166.68, 260)
     mirror2.speed(0)
 
     # Generate and place the isim in its pos
-    isim.shape("ISIM.gif")
+    isim.shape("Assets/ISIM.gif")
     isim.left(90)
     isim.penup()
     isim.setpos(-100.02, 260)
     isim.speed(0)
     
     # Generate and place the antenna in its pos
-    antenna.shape("antenna.gif")
+    antenna.shape("Assets/antenna.gif")
     antenna.left(90)
     antenna.penup()
     antenna.setpos(-33.36, 260)
     antenna.speed(0)
 
     # Generate and place the momentum_flap in its pos
-    momentum_flap.shape("momentum_flap.gif")
+    momentum_flap.shape("Assets/momentum_flap.gif")
     momentum_flap.left(90)
     momentum_flap.penup()
     momentum_flap.setpos(33.36, 260)
     momentum_flap.speed(0)
 
     # Generate and place the solar_array in its pos
-    solar_array.shape("solar_array.gif")
+    solar_array.shape("Assets/solar_array.gif")
     solar_array.left(90)
     solar_array.penup()
     solar_array.setpos(100.02, 260)
     solar_array.speed(0)
 
     # Generate and place the spacecraft_bus_star in its pos
-    spacecraft_bus_star.shape("spacecraft_bus_star.gif")
+    spacecraft_bus_star.shape("Assets/spacecraft_bus_star.gif")
     spacecraft_bus_star.left(90)
     spacecraft_bus_star.penup()
     spacecraft_bus_star.setpos(166.68, 260)
     spacecraft_bus_star.speed(0)
 
     # Generate and place the sunshield in its pos
-    sunshield.shape("sunshield.gif")
+    sunshield.shape("Assets/sunshield.gif")
     sunshield.left(90)
     sunshield.penup()
     sunshield.setpos(233.34, 260)
@@ -1132,7 +1132,7 @@ def drawMessage(txt):
     jimmyBee.hideturtle()
     jimmyBee.penup()
     jimmyBee.setpos(-250, -250)
-    jimmyBee.shape("jimmybee_happy.gif")
+    jimmyBee.shape("Assets/jimmybee_happy.gif")
     jimmyBee.showturtle()
 
     # Show the Jimmy Bee text
@@ -1147,16 +1147,16 @@ def drawMessage(txt):
     # This FOR loop allows us to write letter by letter
     for letter in txt:
         
-        jimmyBee.shape("jimmybee_talk.gif")
+        jimmyBee.shape("Assets/jimmybee_talk.gif")
         if ghost_INFO.xcor() < 290: # As long as the letters do not reach 290 pixels of the window (right limit)
             ghost_INFO.write(letter, align="left", font=("Pixelmix", 8, "bold"))
-            jimmyBee.shape("jimmybee_happy.gif")
+            jimmyBee.shape("Assets/jimmybee_happy.gif")
             ghost_INFO.fd(10)
 
         else: # When it reaches it, start writing on the bottom line
             ghost_INFO.setpos(-210, ghost_INFO.ycor() - 18)
             ghost_INFO.write(letter, align="left", font=("Pixelmix", 8, "bold"))
-            jimmyBee.shape("jimmybee_happy.gif")
+            jimmyBee.shape("Assets/jimmybee_happy.gif")
             ghost_INFO.fd(10)
 
         # In case we encounter a dot, the system will erase que previous text written after a second and continue writing on a fixed position
@@ -1238,11 +1238,11 @@ sunshield = turtle.Turtle()
 
 def scene2():
 
-    listaimagenes = ["F1_5_9intro.gif","F2_4intro.gif","F3intro.gif","F2_4intro.gif","F1_5_9intro.gif","F6_8intro.gif","F7intro.gif","F6_8intro.gif",
-                "F1_5_9intro.gif","F11intro.gif","F12intro.gif","F13intro.gif","F14intro.gif","F15intro.gif","F16intro.gif","F17intro.gif","F18intro.gif",
-                "F19intro.gif","F20intro.gif","F21intro.gif","F22intro.gif","F23intro.gif","F24intro.gif","F25intro.gif","F26intro.gif","F27intro.gif",
-                "F28intro.gif","F29intro.gif","F30intro.gif","F31intro.gif","F32intro.gif","F33intro.gif","F34intro.gif","F35intro.gif","F36intro.gif",
-                "F37intro.gif","F38intro.gif","F39intro.gif","F40intro.gif","F41intro.gif","F42intro.gif","F43intro.gif","F44intro.gif"]
+    listaimagenes = ["Assets/F1_5_9intro.gif","Assets/F2_4intro.gif","Assets/F3intro.gif","Assets/F2_4intro.gif","Assets/F1_5_9intro.gif","Assets/F6_8intro.gif","Assets/F7intro.gif","Assets/F6_8intro.gif",
+                "Assets/F1_5_9intro.gif","Assets/F11intro.gif","Assets/F12intro.gif","Assets/F13intro.gif","Assets/F14intro.gif","Assets/F15intro.gif","Assets/F16intro.gif","Assets/F17intro.gif","Assets/F18intro.gif",
+                "Assets/F19intro.gif","Assets/F20intro.gif","Assets/F21intro.gif","Assets/F22intro.gif","Assets/F23intro.gif","Assets/F24intro.gif","Assets/F25intro.gif","Assets/F26intro.gif","Assets/F27intro.gif",
+                "Assets/F28intro.gif","Assets/F29intro.gif","Assets/F30intro.gif","Assets/F31intro.gif","Assets/F32intro.gif","Assets/F33intro.gif","Assets/F34intro.gif","Assets/F35intro.gif","Assets/F36intro.gif",
+                "Assets/F37intro.gif","Assets/F38intro.gif","Assets/F39intro.gif","Assets/F40intro.gif","Assets/F41intro.gif","Assets/F42intro.gif","Assets/F43intro.gif","Assets/F44intro.gif"]
 
     # creates an array with the images that we will use througout the code
 
@@ -1292,7 +1292,7 @@ def main():
     menu.setup(WIDTH, HEIGHT)
     menu.bgcolor("black")
     menu.title("Cosmic Eyes")
-    menu.bgpic("MENU.gif")
+    menu.bgpic("Assets/MENU.gif")
     menu.update()
 
     # writes title and text
